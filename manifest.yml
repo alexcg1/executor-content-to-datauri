@@ -1,5 +1,5 @@
 manifest_version: 1
 name: ContentToDataURI
 description: "Convert content to data URI"
-url: https://github.com/alexcg1/executor-spacy-sentencizer
-keywords: [text, spacy, sentencizer, nlp]
+url: https://github.com/alexcg1/executor-content-to-datauri
+keywords: [tensor, image, blob, datauri, convert]
