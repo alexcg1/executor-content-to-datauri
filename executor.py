@@ -1,10 +1,18 @@
 from jina import Executor, DocumentArray, requests, Document
 from typing import Any, Dict, Optional, Sequence
 
+image_mime_types = [
+    "image/jpeg",
+    "image/png"
+]
+
 
 def to_datauri(doc: Document):
     # the `convert_content_to_datauri` method doesn't work with tensors so have to do this
-    if hasattr(doc, "tensor"):
+    if doc.tensor is None and doc.blob is None:
+        pass
+
+    elif doc.mime_type in image_mime_types:
         doc.convert_image_tensor_to_blob()
         doc.convert_content_to_datauri()
         doc.convert_blob_to_image_tensor()

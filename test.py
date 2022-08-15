@@ -1,4 +1,5 @@
 from executor import ContentToDataURI
+import sys
 from docarray import Document, DocumentArray
 
 exec = ContentToDataURI()
@@ -8,7 +9,8 @@ image_doc.load_uri_to_image_tensor()
 
 docs = DocumentArray(
     [
-        image_doc
+        image_doc,
+        Document(text="foo")
     ]
 )
 
